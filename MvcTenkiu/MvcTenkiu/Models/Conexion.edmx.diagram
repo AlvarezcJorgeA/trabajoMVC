@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="165921fd31a34ef0bd402a6007e1e796" Name="Diagrama1">
+        <EntityTypeShape EntityType="RedSocialModel.AMIGO" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.CLAN" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.DISPOSITIVO" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.MENU" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.MOVIMIENTO" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.USUARIO" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedSocialModel.VEHICULO" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="RedSocialModel.FK_AMIGO_TIENE_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="RedSocialModel.FK_VEHICULO_PERTENECE_CLAN" ManuallyRouted="false" />
+        <AssociationConnector Association="RedSocialModel.FK_MOVIMIEN_REALIZA_DISPOSIT" ManuallyRouted="false" />
+        <AssociationConnector Association="RedSocialModel.FK_VEHICULO_INTEGRA_DISPOSIT" ManuallyRouted="false" />
+        <AssociationConnector Association="RedSocialModel.FK_VEHICULO_POSEE_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

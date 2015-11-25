@@ -1,0 +1,131 @@
+﻿@model MvcTenkiu.Models.USUARIO
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>USUARIO</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_ID)
+            @Html.ValidationMessageFor(model => model.US_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_NOMBRE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_NOMBRE)
+            @Html.ValidationMessageFor(model => model.US_NOMBRE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_APELLIDO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_APELLIDO)
+            @Html.ValidationMessageFor(model => model.US_APELLIDO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_TELEFONO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_TELEFONO)
+            @Html.ValidationMessageFor(model => model.US_TELEFONO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_CORREO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_CORREO)
+            @Html.ValidationMessageFor(model => model.US_CORREO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_CONTRAS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_CONTRAS)
+            @Html.ValidationMessageFor(model => model.US_CONTRAS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_ALIAS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_ALIAS)
+            @Html.ValidationMessageFor(model => model.US_ALIAS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_FCREACION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_FCREACION)
+            @Html.ValidationMessageFor(model => model.US_FCREACION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_ULTLOG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_ULTLOG)
+            @Html.ValidationMessageFor(model => model.US_ULTLOG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_FNAC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_FNAC)
+            @Html.ValidationMessageFor(model => model.US_FNAC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_NACIONAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_NACIONAL)
+            @Html.ValidationMessageFor(model => model.US_NACIONAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_ESTADO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_ESTADO)
+            @Html.ValidationMessageFor(model => model.US_ESTADO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.US_VISIBLE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.US_VISIBLE)
+            @Html.ValidationMessageFor(model => model.US_VISIBLE)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

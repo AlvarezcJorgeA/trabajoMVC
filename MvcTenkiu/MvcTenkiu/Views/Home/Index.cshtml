@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Mvc Tenkiu";
+}
+
+@section scripts
+{
+    	<script type ="text/javascript" charset ="utf-8">
+    	    $(document).ready(function() {
+    	        $('.flexslider').flexslider({
+    	            animation: "slide",
+    	            slideshow: "true",
+    	            slideshowSpeed: "2500"});
+      	        });
+	    </script>
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <div class="flexslider">
+		        <ul class="slides">
+			        <li>
+				        <img src="/Images/hboxQ60.jpg" />
+			        </li>
+			        <li>
+				        <img src="Images/hboxQ80.jpg" />
+			        </li>
+			        <li>
+				        <img src="Images/hboxQ100.jpg" />
+			        </li>
+		        </ul>
+	        </div>
+        </div>
+    </section>
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-5">
+            <h1>¿Qu&eacute; es Tenkiu?</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium repellat dolorum deserunt, laudantium ipsa maxime, ut aspernatur praesentium aliquid ipsam molestias quo repudiandae consequuntur, totam eveniet fuga, est quidem quae?
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-7">
+            <h1>Registrate</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium repellat dolorum deserunt, laudantium ipsa maxime, ut aspernatur praesentium aliquid ipsam molestias quo repudiandae consequuntur, totam eveniet fuga, est quidem quae?
+            </p>
+        </div>
+    </div>
+
+    <div id="barrasocial" class="social">
+        <ul>
+            <li><i id="fb" class="fa fa-facebook-square"></i></li>
+            <li><i id="tw" class="fa fa-twitter-square"></i></li>
+            <li><i id="yt" class="fa fa-youtube-square"></i></li>
+            <li><i id="ig" class="fa fa-instagram"></i></li>
+        </ul>
+    </div>
+
+
+
+</div>
+
+
+

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RedSocialModelStoreContainer" CdmEntityContainer="RedSocialEntities">
+    <EntitySetMapping Name="AMIGO">
+      <EntityTypeMapping TypeName="RedSocialModel.AMIGO">
+        <MappingFragment StoreEntitySet="AMIGO">
+          <ScalarProperty Name="AM_ID" ColumnName="AM_ID" />
+          <ScalarProperty Name="US_ID" ColumnName="US_ID" />
+          <ScalarProperty Name="AM_US_IDA" ColumnName="AM_US_IDA" />
+          <ScalarProperty Name="AM_TIPO" ColumnName="AM_TIPO" />
+          <ScalarProperty Name="AM_FECHA" ColumnName="AM_FECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLAN">
+      <EntityTypeMapping TypeName="RedSocialModel.CLAN">
+        <MappingFragment StoreEntitySet="CLAN">
+          <ScalarProperty Name="CL_ID" ColumnName="CL_ID" />
+          <ScalarProperty Name="CL_NOMBRE" ColumnName="CL_NOMBRE" />
+          <ScalarProperty Name="CL_FCREACION" ColumnName="CL_FCREACION" />
+          <ScalarProperty Name="CL_AVATAR" ColumnName="CL_AVATAR" />
+          <ScalarProperty Name="CL_DESCRIPCION" ColumnName="CL_DESCRIPCION" />
+          <ScalarProperty Name="CL_WWW" ColumnName="CL_WWW" />
+          <ScalarProperty Name="CL_PRIV" ColumnName="CL_PRIV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISPOSITIVO">
+      <EntityTypeMapping TypeName="RedSocialModel.DISPOSITIVO">
+        <MappingFragment StoreEntitySet="DISPOSITIVO">
+          <ScalarProperty Name="DP_ID" ColumnName="DP_ID" />
+          <ScalarProperty Name="DP_MODELO" ColumnName="DP_MODELO" />
+          <ScalarProperty Name="DP_STATUS" ColumnName="DP_STATUS" />
+          <ScalarProperty Name="DP_SERIE" ColumnName="DP_SERIE" />
+          <ScalarProperty Name="DP_FCREACION" ColumnName="DP_FCREACION" />
+          <ScalarProperty Name="DP_PUNT" ColumnName="DP_PUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENU">
+      <EntityTypeMapping TypeName="RedSocialModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="MN_ID" ColumnName="MN_ID" />
+          <ScalarProperty Name="MN_ESTILO" ColumnName="MN_ESTILO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIMIENTO">
+      <EntityTypeMapping TypeName="RedSocialModel.MOVIMIENTO">
+        <MappingFragment StoreEntitySet="MOVIMIENTO">
+          <ScalarProperty Name="MO_ID" ColumnName="MO_ID" />
+          <ScalarProperty Name="DP_ID" ColumnName="DP_ID" />
+          <ScalarProperty Name="MO_TIPO" ColumnName="MO_TIPO" />
+          <ScalarProperty Name="MO_FECHAHORA" ColumnName="MO_FECHAHORA" />
+          <ScalarProperty Name="MO_DP_RES" ColumnName="MO_DP_RES" />
+          <ScalarProperty Name="MO_PUNT" ColumnName="MO_PUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="RedSocialModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="US_ID" ColumnName="US_ID" />
+          <ScalarProperty Name="US_NOMBRE" ColumnName="US_NOMBRE" />
+          <ScalarProperty Name="US_APELLIDO" ColumnName="US_APELLIDO" />
+          <ScalarProperty Name="US_TELEFONO" ColumnName="US_TELEFONO" />
+          <ScalarProperty Name="US_CORREO" ColumnName="US_CORREO" />
+          <ScalarProperty Name="US_CONTRAS" ColumnName="US_CONTRAS" />
+          <ScalarProperty Name="US_ALIAS" ColumnName="US_ALIAS" />
+          <ScalarProperty Name="US_FCREACION" ColumnName="US_FCREACION" />
+          <ScalarProperty Name="US_ULTLOG" ColumnName="US_ULTLOG" />
+          <ScalarProperty Name="US_AVATAR" ColumnName="US_AVATAR" />
+          <ScalarProperty Name="US_FNAC" ColumnName="US_FNAC" />
+          <ScalarProperty Name="US_NACIONAL" ColumnName="US_NACIONAL" />
+          <ScalarProperty Name="US_ESTADO" ColumnName="US_ESTADO" />
+          <ScalarProperty Name="US_VISIBLE" ColumnName="US_VISIBLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICULO">
+      <EntityTypeMapping TypeName="RedSocialModel.VEHICULO">
+        <MappingFragment StoreEntitySet="VEHICULO">
+          <ScalarProperty Name="VE_ID" ColumnName="VE_ID" />
+          <ScalarProperty Name="US_ID" ColumnName="US_ID" />
+          <ScalarProperty Name="CL_ID" ColumnName="CL_ID" />
+          <ScalarProperty Name="DP_ID" ColumnName="DP_ID" />
+          <ScalarProperty Name="VE_PATENTE" ColumnName="VE_PATENTE" />
+          <ScalarProperty Name="VE_MARCA" ColumnName="VE_MARCA" />
+          <ScalarProperty Name="VE_MODELO" ColumnName="VE_MODELO" />
+          <ScalarProperty Name="VE_ANIO" ColumnName="VE_ANIO" />
+          <ScalarProperty Name="VE_COLOR" ColumnName="VE_COLOR" />
+          <ScalarProperty Name="VE_ESTADO" ColumnName="VE_ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

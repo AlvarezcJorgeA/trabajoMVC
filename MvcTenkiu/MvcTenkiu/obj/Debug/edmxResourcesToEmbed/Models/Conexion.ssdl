@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RedSocialModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RedSocialModelStoreContainer">
+    <EntitySet Name="AMIGO" EntityType="RedSocialModel.Store.AMIGO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLAN" EntityType="RedSocialModel.Store.CLAN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DISPOSITIVO" EntityType="RedSocialModel.Store.DISPOSITIVO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MENU" EntityType="RedSocialModel.Store.MENU" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MOVIMIENTO" EntityType="RedSocialModel.Store.MOVIMIENTO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USUARIO" EntityType="RedSocialModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VEHICULO" EntityType="RedSocialModel.Store.VEHICULO" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AMIGO_TIENE_USUARIO" Association="RedSocialModel.Store.FK_AMIGO_TIENE_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="AMIGO" EntitySet="AMIGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOVIMIEN_REALIZA_DISPOSIT" Association="RedSocialModel.Store.FK_MOVIMIEN_REALIZA_DISPOSIT">
+      <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
+      <End Role="MOVIMIENTO" EntitySet="MOVIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VEHICULO_INTEGRA_DISPOSIT" Association="RedSocialModel.Store.FK_VEHICULO_INTEGRA_DISPOSIT">
+      <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
+      <End Role="VEHICULO" EntitySet="VEHICULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VEHICULO_PERTENECE_CLAN" Association="RedSocialModel.Store.FK_VEHICULO_PERTENECE_CLAN">
+      <End Role="CLAN" EntitySet="CLAN" />
+      <End Role="VEHICULO" EntitySet="VEHICULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VEHICULO_POSEE_USUARIO" Association="RedSocialModel.Store.FK_VEHICULO_POSEE_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="VEHICULO" EntitySet="VEHICULO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AMIGO">
+    <Key>
+      <PropertyRef Name="AM_ID" />
+    </Key>
+    <Property Name="AM_ID" Type="bigint" Nullable="false" />
+    <Property Name="US_ID" Type="bigint" />
+    <Property Name="AM_US_IDA" Type="bigint" />
+    <Property Name="AM_TIPO" Type="varchar" MaxLength="10" />
+    <Property Name="AM_FECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLAN">
+    <Key>
+      <PropertyRef Name="CL_ID" />
+    </Key>
+    <Property Name="CL_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CL_NOMBRE" Type="varchar" MaxLength="40" />
+    <Property Name="CL_FCREACION" Type="datetime" />
+    <Property Name="CL_AVATAR" Type="image" />
+    <Property Name="CL_DESCRIPCION" Type="varchar" MaxLength="800" />
+    <Property Name="CL_WWW" Type="varchar" MaxLength="60" />
+    <Property Name="CL_PRIV" Type="bit" />
+  </EntityType>
+  <EntityType Name="DISPOSITIVO">
+    <Key>
+      <PropertyRef Name="DP_ID" />
+    </Key>
+    <Property Name="DP_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DP_MODELO" Type="varchar" MaxLength="10" />
+    <Property Name="DP_STATUS" Type="varchar" MaxLength="10" />
+    <Property Name="DP_SERIE" Type="varchar" MaxLength="10" />
+    <Property Name="DP_FCREACION" Type="datetime" />
+    <Property Name="DP_PUNT" Type="bigint" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="MN_ID" />
+    </Key>
+    <Property Name="MN_ID" Type="int" Nullable="false" />
+    <Property Name="MN_ESTILO" Type="int" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTO">
+    <Key>
+      <PropertyRef Name="MO_ID" />
+    </Key>
+    <Property Name="MO_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DP_ID" Type="bigint" />
+    <Property Name="MO_TIPO" Type="varchar" MaxLength="10" />
+    <Property Name="MO_FECHAHORA" Type="datetime" />
+    <Property Name="MO_DP_RES" Type="bigint" />
+    <Property Name="MO_PUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="US_ID" />
+    </Key>
+    <Property Name="US_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="US_NOMBRE" Type="varchar" MaxLength="60" />
+    <Property Name="US_APELLIDO" Type="varchar" MaxLength="60" />
+    <Property Name="US_TELEFONO" Type="varchar" MaxLength="14" />
+    <Property Name="US_CORREO" Type="varchar" MaxLength="40" />
+    <Property Name="US_CONTRAS" Type="varchar" MaxLength="20" />
+    <Property Name="US_ALIAS" Type="varchar" MaxLength="30" />
+    <Property Name="US_FCREACION" Type="datetime" />
+    <Property Name="US_ULTLOG" Type="datetime" />
+    <Property Name="US_AVATAR" Type="image" />
+    <Property Name="US_FNAC" Type="datetime" />
+    <Property Name="US_NACIONAL" Type="varchar" MaxLength="10" />
+    <Property Name="US_ESTADO" Type="varchar" MaxLength="10" />
+    <Property Name="US_VISIBLE" Type="bit" />
+  </EntityType>
+  <EntityType Name="VEHICULO">
+    <Key>
+      <PropertyRef Name="VE_ID" />
+    </Key>
+    <Property Name="VE_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="US_ID" Type="bigint" />
+    <Property Name="CL_ID" Type="bigint" Nullable="false" />
+    <Property Name="DP_ID" Type="bigint" Nullable="false" />
+    <Property Name="VE_PATENTE" Type="varchar" MaxLength="6" />
+    <Property Name="VE_MARCA" Type="varchar" MaxLength="20" />
+    <Property Name="VE_MODELO" Type="varchar" MaxLength="20" />
+    <Property Name="VE_ANIO" Type="int" />
+    <Property Name="VE_COLOR" Type="varchar" MaxLength="20" />
+    <Property Name="VE_ESTADO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_AMIGO_TIENE_USUARIO">
+    <End Role="USUARIO" Type="RedSocialModel.Store.USUARIO" Multiplicity="0..1" />
+    <End Role="AMIGO" Type="RedSocialModel.Store.AMIGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="US_ID" />
+      </Principal>
+      <Dependent Role="AMIGO">
+        <PropertyRef Name="US_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOVIMIEN_REALIZA_DISPOSIT">
+    <End Role="DISPOSITIVO" Type="RedSocialModel.Store.DISPOSITIVO" Multiplicity="0..1" />
+    <End Role="MOVIMIENTO" Type="RedSocialModel.Store.MOVIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISPOSITIVO">
+        <PropertyRef Name="DP_ID" />
+      </Principal>
+      <Dependent Role="MOVIMIENTO">
+        <PropertyRef Name="DP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VEHICULO_INTEGRA_DISPOSIT">
+    <End Role="DISPOSITIVO" Type="RedSocialModel.Store.DISPOSITIVO" Multiplicity="1" />
+    <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISPOSITIVO">
+        <PropertyRef Name="DP_ID" />
+      </Principal>
+      <Dependent Role="VEHICULO">
+        <PropertyRef Name="DP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VEHICULO_PERTENECE_CLAN">
+    <End Role="CLAN" Type="RedSocialModel.Store.CLAN" Multiplicity="1" />
+    <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLAN">
+        <PropertyRef Name="CL_ID" />
+      </Principal>
+      <Dependent Role="VEHICULO">
+        <PropertyRef Name="CL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VEHICULO_POSEE_USUARIO">
+    <End Role="USUARIO" Type="RedSocialModel.Store.USUARIO" Multiplicity="0..1" />
+    <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="US_ID" />
+      </Principal>
+      <Dependent Role="VEHICULO">
+        <PropertyRef Name="US_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,109 @@
+﻿@model MvcTenkiu.Models.USUARIO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>USUARIO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_APELLIDO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_APELLIDO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_TELEFONO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_TELEFONO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_CORREO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_CORREO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_CONTRAS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_CONTRAS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_ALIAS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_ALIAS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_FCREACION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_FCREACION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_ULTLOG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_ULTLOG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_FNAC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_FNAC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_NACIONAL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_NACIONAL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_ESTADO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_ESTADO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.US_VISIBLE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.US_VISIBLE)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

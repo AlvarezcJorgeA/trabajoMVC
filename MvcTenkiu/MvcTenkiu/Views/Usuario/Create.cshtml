@@ -1,0 +1,75 @@
+﻿@model MvcTenkiu.Models.USUARIO
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>USUARIO</legend>
+
+                <div class="editor-field">
+            @Html.TextBoxFor(model => model.US_NOMBRE, new { @placeholder = "Tus Nombres", @type = "text" })
+            @Html.ValidationMessageFor(model => model.US_NOMBRE)
+        </div>
+        
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.US_APELLIDO, new { @placeholder = "Tus Apellidos", @type = "text" })
+            @Html.ValidationMessageFor(model => model.US_APELLIDO)
+        </div>
+
+       <div class="editor-field">
+            @Html.TextBoxFor(model => model.US_TELEFONO , new {@placeholder="Tu Celular", @type="number"})
+            @Html.ValidationMessageFor(model => model.US_TELEFONO)
+        </div>
+
+        
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.US_CORREO, new { @placeholder = "Tu Correo", @type = "email" })
+            @Html.ValidationMessageFor(model => model.US_CORREO)
+        </div>
+
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.US_CONTRAS, new { @placeholder = "Tu Contraseña", @type = "password" })
+            @Html.ValidationMessageFor(model => model.US_CONTRAS)
+        </div>
+
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.US_ALIAS, new { @placeholder = "Un Alias - Ej. 'Victor20'", @type = "text" })
+            @Html.ValidationMessageFor(model => model.US_ALIAS)
+        </div>
+
+       <div class="editor-field">
+            Cuando Naciste?
+            @Html.TextBoxFor(model => model.US_FNAC, new {@type="date", style="width:196px"})
+            @Html.ValidationMessageFor(model => model.US_FNAC)
+        </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.US_NACIONAL, new { @placeholder = "Tu Nacionalidad", @type = "text" })
+                @Html.ValidationMessageFor(model => model.US_NACIONAL)
+            </div>
+
+        <div class="editor-field">
+            Quieres ser visible por otros usuarios?            
+            @Html.CheckBoxFor(model => model.US_VISIBLE.Value, new { @Style = "width:35px" })
+            @Html.ValidationMessageFor(model => model.US_VISIBLE)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
