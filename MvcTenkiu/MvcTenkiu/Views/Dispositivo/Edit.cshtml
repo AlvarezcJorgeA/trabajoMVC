@@ -1,0 +1,76 @@
+﻿@model MvcTenkiu.Models.DISPOSITIVO
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DISPOSITIVO</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_ID)
+            @Html.ValidationMessageFor(model => model.DP_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_MODELO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_MODELO)
+            @Html.ValidationMessageFor(model => model.DP_MODELO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_STATUS)
+            @Html.ValidationMessageFor(model => model.DP_STATUS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_SERIE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_SERIE)
+            @Html.ValidationMessageFor(model => model.DP_SERIE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_FCREACION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_FCREACION)
+            @Html.ValidationMessageFor(model => model.DP_FCREACION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DP_PUNT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DP_PUNT)
+            @Html.ValidationMessageFor(model => model.DP_PUNT)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,53 @@
+﻿body {
+}
+
+.lista {
+font-size:12px;
+width:80%; 
+height:100%;
+}
+
+.Tablalista {
+text-align:justify; 
+table-layout:auto;  
+width:100%; 
+align-items:center;
+background:#e5e7ff;
+border: 1px solid white; 
+box-shadow:#bebebe 4px 4px; 
+border-radius: 8px 8px; 
+align-content:center;
+
+}
+.enc_lista {
+    background:#939af7;
+}
+
+.link_lista {
+    text-align:right; 
+    width:20%;
+}
+
+.eliminardiv {
+    font-size:14px;
+    width:60%;
+    border-width:2px;
+    border-color:white;
+    background:#e5e7ff;
+    box-shadow:8px 8px;
+    border-radius:8px;
+    border-bottom-style:solid;
+}
+
+
+.display-label {
+    margin-left:4px;
+    float:left;
+    color:blue;
+    width:40%;
+
+}
+
+.display-field {
+    width:100%;
+}

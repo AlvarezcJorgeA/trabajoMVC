@@ -12,15 +12,14 @@ namespace MvcTenkiu.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MOVIMIENTO
+    public partial class LOG
     {
-        public long MO_ID { get; set; }
-        public Nullable<long> DP_ID { get; set; }
-        public string MO_TIPO { get; set; }
-        public Nullable<System.DateTime> MO_FECHAHORA { get; set; }
-        public Nullable<long> MO_DP_RES { get; set; }
-        public Nullable<int> MO_PUNT { get; set; }
-    
-        public virtual DISPOSITIVO DISPOSITIVO { get; set; }
+        public int ID_LOG { get; set; }
+        public Nullable<int> ID_DISPOSITIVO { get; set; }
+        public Nullable<int> ID_USER { get; set; }
+        public string TIPOMOV { get; set; }
+        public Nullable<int> ID_USER_RECEPTOR { get; set; }
+        public Nullable<int> CANT_PUNTOS { get; set; }
+        public Nullable<System.DateTime> FECHAHORA { get; set; }
     }
 }

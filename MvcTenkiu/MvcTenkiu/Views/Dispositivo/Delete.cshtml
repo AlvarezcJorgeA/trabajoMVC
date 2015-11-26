@@ -1,0 +1,65 @@
+﻿@model MvcTenkiu.Models.DISPOSITIVO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Dispositivo</h2>
+
+<h3>Esta seguro de eliminar este dispositivo?</h3>
+
+<div class="eliminardiv">
+<fieldset>
+    <legend>DISPOSITIVO</legend>
+
+    <div class="display-label">
+         ID
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_ID)
+    </div>
+
+    <div class="display-label">
+         Modelo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_MODELO)
+    </div>
+
+    <div class="display-label">
+         Estado
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_STATUS)
+    </div>
+
+    <div class="display-label">
+         N° de Serie
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_SERIE)
+    </div>
+
+    <div class="display-label">
+         Fecha de Creacion
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_FCREACION)
+    </div>
+
+    <div class="display-label">
+         Puntaje
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_PUNT)
+    </div>
+</fieldset>
+    </div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <br/>
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink("Volver", "Index")
+    </p>
+}

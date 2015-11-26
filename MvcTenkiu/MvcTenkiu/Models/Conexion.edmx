@@ -4,36 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RedSocialModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="RedSocialModelStoreContainer">
-          <EntitySet Name="AMIGO" EntityType="RedSocialModel.Store.AMIGO" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CLAN" EntityType="RedSocialModel.Store.CLAN" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DISPOSITIVO" EntityType="RedSocialModel.Store.DISPOSITIVO" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MENU" EntityType="RedSocialModel.Store.MENU" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MOVIMIENTO" EntityType="RedSocialModel.Store.MOVIMIENTO" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="USUARIO" EntityType="RedSocialModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="VEHICULO" EntityType="RedSocialModel.Store.VEHICULO" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_AMIGO_TIENE_USUARIO" Association="RedSocialModel.Store.FK_AMIGO_TIENE_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIO" />
-            <End Role="AMIGO" EntitySet="AMIGO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MOVIMIEN_REALIZA_DISPOSIT" Association="RedSocialModel.Store.FK_MOVIMIEN_REALIZA_DISPOSIT">
-            <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
-            <End Role="MOVIMIENTO" EntitySet="MOVIMIENTO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VEHICULO_INTEGRA_DISPOSIT" Association="RedSocialModel.Store.FK_VEHICULO_INTEGRA_DISPOSIT">
-            <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
-            <End Role="VEHICULO" EntitySet="VEHICULO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VEHICULO_PERTENECE_CLAN" Association="RedSocialModel.Store.FK_VEHICULO_PERTENECE_CLAN">
-            <End Role="CLAN" EntitySet="CLAN" />
-            <End Role="VEHICULO" EntitySet="VEHICULO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VEHICULO_POSEE_USUARIO" Association="RedSocialModel.Store.FK_VEHICULO_POSEE_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIO" />
-            <End Role="VEHICULO" EntitySet="VEHICULO" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="RedSocialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AMIGO">
           <Key>
             <PropertyRef Name="AM_ID" />
@@ -48,7 +19,7 @@
           <Key>
             <PropertyRef Name="CL_ID" />
           </Key>
-          <Property Name="CL_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CL_NOMBRE" Type="varchar" MaxLength="40" />
           <Property Name="CL_FCREACION" Type="datetime" />
           <Property Name="CL_AVATAR" Type="image" />
@@ -60,12 +31,26 @@
           <Key>
             <PropertyRef Name="DP_ID" />
           </Key>
-          <Property Name="DP_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DP_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DP_MODELO" Type="varchar" MaxLength="10" />
           <Property Name="DP_STATUS" Type="varchar" MaxLength="10" />
           <Property Name="DP_SERIE" Type="varchar" MaxLength="10" />
           <Property Name="DP_FCREACION" Type="datetime" />
           <Property Name="DP_PUNT" Type="bigint" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'RedSocial.dbo.LOG' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="LOG">
+          <Key>
+            <PropertyRef Name="ID_LOG" />
+          </Key>
+          <Property Name="ID_LOG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_DISPOSITIVO" Type="int" />
+          <Property Name="ID_USER" Type="int" />
+          <Property Name="TIPOMOV" Type="varchar" MaxLength="50" />
+          <Property Name="ID_USER_RECEPTOR" Type="int" />
+          <Property Name="CANT_PUNTOS" Type="int" />
+          <Property Name="FECHAHORA" Type="datetime" />
         </EntityType>
         <EntityType Name="MENU">
           <Key>
@@ -78,18 +63,27 @@
           <Key>
             <PropertyRef Name="MO_ID" />
           </Key>
-          <Property Name="MO_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DP_ID" Type="bigint" />
           <Property Name="MO_TIPO" Type="varchar" MaxLength="10" />
           <Property Name="MO_FECHAHORA" Type="datetime" />
           <Property Name="MO_DP_RES" Type="bigint" />
           <Property Name="MO_PUNT" Type="int" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'RedSocial.dbo.UserRoles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roll" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="USUARIO">
           <Key>
             <PropertyRef Name="US_ID" />
           </Key>
-          <Property Name="US_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="US_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="US_NOMBRE" Type="varchar" MaxLength="60" />
           <Property Name="US_APELLIDO" Type="varchar" MaxLength="60" />
           <Property Name="US_TELEFONO" Type="varchar" MaxLength="14" />
@@ -108,7 +102,7 @@
           <Key>
             <PropertyRef Name="VE_ID" />
           </Key>
-          <Property Name="VE_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="US_ID" Type="bigint" />
           <Property Name="CL_ID" Type="bigint" Nullable="false" />
           <Property Name="DP_ID" Type="bigint" Nullable="false" />
@@ -120,8 +114,8 @@
           <Property Name="VE_ESTADO" Type="varchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK_AMIGO_TIENE_USUARIO">
-          <End Role="USUARIO" Type="RedSocialModel.Store.USUARIO" Multiplicity="0..1" />
-          <End Role="AMIGO" Type="RedSocialModel.Store.AMIGO" Multiplicity="*" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <End Role="AMIGO" Type="Self.AMIGO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USUARIO">
               <PropertyRef Name="US_ID" />
@@ -132,8 +126,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MOVIMIEN_REALIZA_DISPOSIT">
-          <End Role="DISPOSITIVO" Type="RedSocialModel.Store.DISPOSITIVO" Multiplicity="0..1" />
-          <End Role="MOVIMIENTO" Type="RedSocialModel.Store.MOVIMIENTO" Multiplicity="*" />
+          <End Role="DISPOSITIVO" Type="Self.DISPOSITIVO" Multiplicity="0..1" />
+          <End Role="MOVIMIENTO" Type="Self.MOVIMIENTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DISPOSITIVO">
               <PropertyRef Name="DP_ID" />
@@ -144,8 +138,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VEHICULO_INTEGRA_DISPOSIT">
-          <End Role="DISPOSITIVO" Type="RedSocialModel.Store.DISPOSITIVO" Multiplicity="1" />
-          <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+          <End Role="DISPOSITIVO" Type="Self.DISPOSITIVO" Multiplicity="1" />
+          <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DISPOSITIVO">
               <PropertyRef Name="DP_ID" />
@@ -156,8 +150,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VEHICULO_PERTENECE_CLAN">
-          <End Role="CLAN" Type="RedSocialModel.Store.CLAN" Multiplicity="1" />
-          <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+          <End Role="CLAN" Type="Self.CLAN" Multiplicity="1" />
+          <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLAN">
               <PropertyRef Name="CL_ID" />
@@ -168,8 +162,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VEHICULO_POSEE_USUARIO">
-          <End Role="USUARIO" Type="RedSocialModel.Store.USUARIO" Multiplicity="0..1" />
-          <End Role="VEHICULO" Type="RedSocialModel.Store.VEHICULO" Multiplicity="*" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USUARIO">
               <PropertyRef Name="US_ID" />
@@ -179,8 +173,53 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="RedSocialModelStoreContainer">
+          <EntitySet Name="AMIGO" EntityType="Self.AMIGO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLAN" EntityType="Self.CLAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DISPOSITIVO" EntityType="Self.DISPOSITIVO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MENU" EntityType="Self.MENU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MOVIMIENTO" EntityType="Self.MOVIMIENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG" EntityType="Self.LOG" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[LOG].[ID_LOG] AS [ID_LOG], 
+[LOG].[ID_DISPOSITIVO] AS [ID_DISPOSITIVO], 
+[LOG].[ID_USER] AS [ID_USER], 
+[LOG].[TIPOMOV] AS [TIPOMOV], 
+[LOG].[ID_USER_RECEPTOR] AS [ID_USER_RECEPTOR], 
+[LOG].[CANT_PUNTOS] AS [CANT_PUNTOS], 
+[LOG].[FECHAHORA] AS [FECHAHORA]
+FROM [dbo].[LOG] AS [LOG]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UserRoles].[UserRoleId] AS [UserRoleId], 
+[UserRoles].[Roll] AS [Roll]
+FROM [dbo].[UserRoles] AS [UserRoles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AMIGO_TIENE_USUARIO" Association="Self.FK_AMIGO_TIENE_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="AMIGO" EntitySet="AMIGO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVIMIEN_REALIZA_DISPOSIT" Association="Self.FK_MOVIMIEN_REALIZA_DISPOSIT">
+            <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
+            <End Role="MOVIMIENTO" EntitySet="MOVIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEHICULO_INTEGRA_DISPOSIT" Association="Self.FK_VEHICULO_INTEGRA_DISPOSIT">
+            <End Role="DISPOSITIVO" EntitySet="DISPOSITIVO" />
+            <End Role="VEHICULO" EntitySet="VEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEHICULO_PERTENECE_CLAN" Association="Self.FK_VEHICULO_PERTENECE_CLAN">
+            <End Role="CLAN" EntitySet="CLAN" />
+            <End Role="VEHICULO" EntitySet="VEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEHICULO_POSEE_USUARIO" Association="Self.FK_VEHICULO_POSEE_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VEHICULO" EntitySet="VEHICULO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RedSocialModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -212,6 +251,8 @@
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
+          <EntitySet Name="LOG" EntityType="RedSocialModel.LOG" />
+          <EntitySet Name="UserRoles" EntityType="RedSocialModel.UserRoles" />
         </EntityContainer>
         <EntityType Name="AMIGO">
           <Key>
@@ -368,6 +409,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LOG">
+          <Key>
+            <PropertyRef Name="ID_LOG" />
+          </Key>
+          <Property Name="ID_LOG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_DISPOSITIVO" Type="Int32" />
+          <Property Name="ID_USER" Type="Int32" />
+          <Property Name="TIPOMOV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_USER_RECEPTOR" Type="Int32" />
+          <Property Name="CANT_PUNTOS" Type="Int32" />
+          <Property Name="FECHAHORA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roll" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -466,6 +526,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LOG">
+            <EntityTypeMapping TypeName="RedSocialModel.LOG">
+              <MappingFragment StoreEntitySet="LOG">
+                <ScalarProperty Name="FECHAHORA" ColumnName="FECHAHORA" />
+                <ScalarProperty Name="CANT_PUNTOS" ColumnName="CANT_PUNTOS" />
+                <ScalarProperty Name="ID_USER_RECEPTOR" ColumnName="ID_USER_RECEPTOR" />
+                <ScalarProperty Name="TIPOMOV" ColumnName="TIPOMOV" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_DISPOSITIVO" ColumnName="ID_DISPOSITIVO" />
+                <ScalarProperty Name="ID_LOG" ColumnName="ID_LOG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="RedSocialModel.UserRoles">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="Roll" ColumnName="Roll" />
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -483,6 +564,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

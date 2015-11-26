@@ -28,6 +28,8 @@
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>
+    <EntitySet Name="LOG" EntityType="RedSocialModel.LOG" />
+    <EntitySet Name="UserRoles" EntityType="RedSocialModel.UserRoles" />
   </EntityContainer>
   <EntityType Name="AMIGO">
     <Key>
@@ -184,4 +186,23 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="LOG">
+    <Key>
+      <PropertyRef Name="ID_LOG" />
+    </Key>
+    <Property Name="ID_LOG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_DISPOSITIVO" Type="Int32" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="TIPOMOV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_USER_RECEPTOR" Type="Int32" />
+    <Property Name="CANT_PUNTOS" Type="Int32" />
+    <Property Name="FECHAHORA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Name="UserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Roll" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -1,0 +1,44 @@
+﻿@model MvcTenkiu.Models.DISPOSITIVO
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Nuevo Dispositivo</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DISPOSITIVO</legend>
+
+        <div class="editor-label">
+            Modelo del Dispositivo
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DP_MODELO, new { @required=true})
+            @Html.ValidationMessageFor(model => model.DP_MODELO)
+        </div>
+
+        <div class="editor-label">
+            Numero de Serie
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DP_SERIE, new { @required = true })
+            @Html.ValidationMessageFor(model => model.DP_SERIE)
+        </div>
+                
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -93,5 +93,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LOG">
+      <EntityTypeMapping TypeName="RedSocialModel.LOG">
+        <MappingFragment StoreEntitySet="LOG">
+          <ScalarProperty Name="FECHAHORA" ColumnName="FECHAHORA" />
+          <ScalarProperty Name="CANT_PUNTOS" ColumnName="CANT_PUNTOS" />
+          <ScalarProperty Name="ID_USER_RECEPTOR" ColumnName="ID_USER_RECEPTOR" />
+          <ScalarProperty Name="TIPOMOV" ColumnName="TIPOMOV" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="ID_DISPOSITIVO" ColumnName="ID_DISPOSITIVO" />
+          <ScalarProperty Name="ID_LOG" ColumnName="ID_LOG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="RedSocialModel.UserRoles">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

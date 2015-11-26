@@ -1,0 +1,61 @@
+﻿@model MvcTenkiu.Models.MOVIMIENTO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>MOVIMIENTO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MO_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MO_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MO_TIPO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MO_TIPO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MO_FECHAHORA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MO_FECHAHORA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MO_DP_RES)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MO_DP_RES)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MO_PUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MO_PUNT)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

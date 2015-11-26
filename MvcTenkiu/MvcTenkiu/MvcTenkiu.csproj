@@ -164,7 +164,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DispositivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovimientoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\CustomMembershipProvider.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -196,10 +198,16 @@
     <Compile Include="Models\DISPOSITIVO.cs">
       <DependentUpon>Conexion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LOG.cs">
+      <DependentUpon>Conexion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MENU.cs">
       <DependentUpon>Conexion.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MOVIMIENTO.cs">
+      <DependentUpon>Conexion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRoles.cs">
       <DependentUpon>Conexion.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USUARIO.cs">
@@ -266,6 +274,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\vista.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <EntityDeploy Include="Models\Conexion.edmx">
@@ -350,6 +359,16 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
     <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Dispositivo\Index.cshtml" />
+    <Content Include="Views\Dispositivo\Details.cshtml" />
+    <Content Include="Views\Dispositivo\Create.cshtml" />
+    <Content Include="Views\Dispositivo\Edit.cshtml" />
+    <Content Include="Views\Dispositivo\Delete.cshtml" />
+    <Content Include="Views\Movimiento\Index.cshtml" />
+    <Content Include="Views\Movimiento\Details.cshtml" />
+    <Content Include="Views\Movimiento\Create.cshtml" />
+    <Content Include="Views\Movimiento\Edit.cshtml" />
+    <Content Include="Views\Movimiento\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

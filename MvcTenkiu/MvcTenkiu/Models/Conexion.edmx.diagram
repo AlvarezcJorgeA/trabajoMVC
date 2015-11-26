@@ -17,6 +17,8 @@
         <AssociationConnector Association="RedSocialModel.FK_MOVIMIEN_REALIZA_DISPOSIT" ManuallyRouted="false" />
         <AssociationConnector Association="RedSocialModel.FK_VEHICULO_INTEGRA_DISPOSIT" ManuallyRouted="false" />
         <AssociationConnector Association="RedSocialModel.FK_VEHICULO_POSEE_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RedSocialModel.LOG" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="RedSocialModel.UserRoles" Width="1.5" PointX="6.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

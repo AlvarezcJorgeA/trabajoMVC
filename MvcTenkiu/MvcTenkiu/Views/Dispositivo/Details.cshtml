@@ -1,0 +1,57 @@
+﻿@model MvcTenkiu.Models.DISPOSITIVO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DISPOSITIVO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_STATUS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_STATUS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_SERIE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_SERIE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_FCREACION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_FCREACION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DP_PUNT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DP_PUNT)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MvcTenkiu.Models.MOVIMIENTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movimientos</h2>
+
+<p>
+
+</p>
+<div class="lista">
+    <table class="Tablalista">
+
+        <tr class="enc_lista">
+            <th>
+                ID Transaccion
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Tipo Transaccion
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MO_FECHAHORA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MO_DP_RES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MO_PUNT)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MO_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DISPOSITIVO.DP_MODELO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MO_TIPO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MO_FECHAHORA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MO_DP_RES)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MO_PUNT)
+                </td>
+                <td class="link_lista">
+                    @Html.ActionLink("Edit", "Edit", new { id=item.DP_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DP_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
