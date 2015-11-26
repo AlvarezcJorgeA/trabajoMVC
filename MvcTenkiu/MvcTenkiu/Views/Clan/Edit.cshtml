@@ -1,0 +1,63 @@
+﻿@model MvcTenkiu.Models.CLAN
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar informacion de Clan</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CLAN</legend>
+
+    @Html.HiddenFor(model => model.CL_ID)
+        @Html.HiddenFor(model => model.CL_FCREACION)
+
+        <div class="editor-label">
+            Nombre del Clan
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CL_NOMBRE)
+            @Html.ValidationMessageFor(model => model.CL_NOMBRE)
+        </div>
+
+        <div class="editor-label">
+            Breve Descripcion
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CL_DESCRIPCION)
+            @Html.ValidationMessageFor(model => model.CL_DESCRIPCION)
+        </div>
+
+        <div class="editor-label">
+            Sitio Web
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CL_WWW)
+            @Html.ValidationMessageFor(model => model.CL_WWW)
+        </div>
+
+        <div class="editor-label">
+           Privado?
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CL_PRIV)
+            @Html.ValidationMessageFor(model => model.CL_PRIV)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar Cambios" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

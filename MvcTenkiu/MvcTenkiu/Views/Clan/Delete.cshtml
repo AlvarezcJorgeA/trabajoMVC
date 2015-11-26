@@ -1,0 +1,66 @@
+﻿@model MvcTenkiu.Models.CLAN
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Estas seguro de eliminarlo?</h3>
+
+<div class="eliminardiv">
+
+    <fieldset>
+        <legend>CLAN</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_ID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_ID)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_NOMBRE)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_NOMBRE)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_FCREACION)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_FCREACION)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_DESCRIPCION)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_DESCRIPCION)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_WWW)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_WWW)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CL_PRIV)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CL_PRIV)
+        </div>
+    </fieldset>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Volver", "Index")
+        </p>
+    }

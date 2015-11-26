@@ -1,0 +1,89 @@
+﻿@model MvcTenkiu.Models.VEHICULO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Estas seguro de eliminarlo?</h3>
+<fieldset>
+    <legend>VEHICULO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLAN.CL_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLAN.CL_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_PATENTE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_PATENTE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_MARCA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_MARCA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ANIO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ANIO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_COLOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_COLOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ESTADO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ESTADO)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Volver", "Index")
+    </p>
+}

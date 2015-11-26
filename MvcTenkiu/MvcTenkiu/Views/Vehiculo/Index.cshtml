@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MvcTenkiu.Models.VEHICULO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tus Vehiculos</h2>
+
+<p>
+    @Html.ActionLink("Vincula un Nuevo Vehiculo", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLAN.CL_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_PATENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_MARCA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_MODELO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_ANIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_COLOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VE_ESTADO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIO.US_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLAN.CL_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DISPOSITIVO.DP_MODELO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_PATENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_MARCA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_MODELO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_ANIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_COLOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VE_ESTADO)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Desvincular", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

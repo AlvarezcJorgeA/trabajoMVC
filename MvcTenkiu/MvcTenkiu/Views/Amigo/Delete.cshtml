@@ -1,0 +1,54 @@
+﻿@model MvcTenkiu.Models.AMIGO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Estas seguro de eliminarlo?</h3>
+<fieldset>
+    <legend>AMIGO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AM_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AM_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AM_US_IDA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AM_US_IDA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AM_TIPO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AM_TIPO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AM_FECHA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AM_FECHA)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Volver", "Index")
+    </p>
+}

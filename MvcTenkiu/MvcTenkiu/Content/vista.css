@@ -28,6 +28,11 @@ align-content:center;
     width:20%;
 }
 
+.link_lista_det {
+    text-align:right; 
+    width:35%;
+}
+
 .eliminardiv {
     font-size:14px;
     width:60%;
@@ -39,6 +44,16 @@ align-content:center;
     border-bottom-style:solid;
 }
 
+.detallediv {
+    font-size:14px;
+    width:60%;
+    border-width:2px;
+    border-color:white;
+    background:#e5e7ff;
+    box-shadow:8px 8px;
+    border-radius:8px;
+    border-bottom-style:solid;
+}
 
 .display-label {
     margin-left:4px;

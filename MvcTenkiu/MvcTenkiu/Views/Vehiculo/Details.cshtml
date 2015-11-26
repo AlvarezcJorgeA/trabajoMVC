@@ -1,0 +1,85 @@
+﻿@model MvcTenkiu.Models.VEHICULO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VEHICULO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USUARIO.US_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLAN.CL_NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLAN.CL_NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DISPOSITIVO.DP_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_PATENTE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_PATENTE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_MARCA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_MARCA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_MODELO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_MODELO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ANIO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ANIO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_COLOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_COLOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VE_ESTADO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VE_ESTADO)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

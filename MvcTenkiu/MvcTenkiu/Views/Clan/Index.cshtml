@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MvcTenkiu.Models.CLAN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Grupos y Clanes</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Clan", "Create")
+</p>
+<div class="lista">
+    <table class="Tablalista">
+
+        <tr class="enc_lista">
+            <th>
+                Codigo
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Sitio Web
+            </th>
+           
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CL_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CL_NOMBRE)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.CL_WWW)
+                </td>
+                
+                <td class="link_lista_det">
+                    @Html.ActionLink("Detalles", "Details", new { id = item.CL_ID }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.CL_ID }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.CL_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
