@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edicion de Dispositivo</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,62 +13,45 @@
     <fieldset>
         <legend>DISPOSITIVO</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DP_ID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DP_ID)
-            @Html.ValidationMessageFor(model => model.DP_ID)
-        </div>
+        
+           @Html.HiddenFor(model => model.DP_ID)
+           @Html.HiddenFor(model => model.DP_PUNT)
+           @Html.HiddenFor(model => model.DP_FCREACION)
+           
+        
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DP_MODELO)
+            Modelo del Dispositivo
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DP_MODELO)
+            @Html.TextBoxFor(model => model.DP_MODELO, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.DP_MODELO)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DP_STATUS)
+           Estado del Dispositivo
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DP_STATUS)
+            @Html.EditorFor(model => model.DP_STATUS, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.DP_STATUS)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DP_SERIE)
+            Numero de Serie
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DP_SERIE)
+            @Html.TextBoxFor(model => model.DP_SERIE, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.DP_SERIE)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DP_FCREACION)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DP_FCREACION)
-            @Html.ValidationMessageFor(model => model.DP_FCREACION)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DP_PUNT)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DP_PUNT)
-            @Html.ValidationMessageFor(model => model.DP_PUNT)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
+       <p>
+            <input type="submit" value="Guardar Cambios" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver", "Index")
 </div>
 
 @section Scripts {

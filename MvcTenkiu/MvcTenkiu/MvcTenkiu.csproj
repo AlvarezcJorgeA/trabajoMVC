@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DispositivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LOGController.cs" />
     <Compile Include="Controllers\MovimientoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\CustomMembershipProvider.cs" />
@@ -369,6 +370,11 @@
     <Content Include="Views\Movimiento\Create.cshtml" />
     <Content Include="Views\Movimiento\Edit.cshtml" />
     <Content Include="Views\Movimiento\Delete.cshtml" />
+    <Content Include="Views\LOG\Index.cshtml" />
+    <Content Include="Views\LOG\Details.cshtml" />
+    <Content Include="Views\LOG\Create.cshtml" />
+    <Content Include="Views\LOG\Edit.cshtml" />
+    <Content Include="Views\LOG\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

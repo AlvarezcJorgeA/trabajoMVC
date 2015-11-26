@@ -32,9 +32,9 @@
             <PropertyRef Name="DP_ID" />
           </Key>
           <Property Name="DP_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DP_MODELO" Type="varchar" MaxLength="10" />
-          <Property Name="DP_STATUS" Type="varchar" MaxLength="10" />
-          <Property Name="DP_SERIE" Type="varchar" MaxLength="10" />
+          <Property Name="DP_MODELO" Type="varchar" MaxLength="20" />
+          <Property Name="DP_STATUS" Type="varchar" MaxLength="20" />
+          <Property Name="DP_SERIE" Type="varchar" MaxLength="20" />
           <Property Name="DP_FCREACION" Type="datetime" />
           <Property Name="DP_PUNT" Type="bigint" />
         </EntityType>
@@ -283,9 +283,9 @@ FROM [dbo].[UserRoles] AS [UserRoles]</DefiningQuery>
             <PropertyRef Name="DP_ID" />
           </Key>
           <Property Name="DP_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="DP_MODELO" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="DP_STATUS" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="DP_SERIE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DP_MODELO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DP_STATUS" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DP_SERIE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="DP_FCREACION" Type="DateTime" Precision="3" />
           <Property Name="DP_PUNT" Type="Int64" />
           <NavigationProperty Name="MOVIMIENTO" Relationship="RedSocialModel.FK_MOVIMIEN_REALIZA_DISPOSIT" FromRole="DISPOSITIVO" ToRole="MOVIMIENTO" />

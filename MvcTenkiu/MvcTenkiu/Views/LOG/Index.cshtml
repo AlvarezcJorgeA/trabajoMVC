@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MvcTenkiu.Models.LOG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Historial de Transacciones</h2>
+
+<p>
+    
+    <div class="lista">
+        <table class="Tablalista">
+
+            <tr class="enc_lista">
+                <th>
+                    ID
+                </th>
+                <th>
+                    ID Dispositivo
+                </th>
+                <th>
+                    ID Usuario
+                </th>
+                <th>
+                    Tipo de Movimiento
+                </th>
+                <th>
+                    Usuario Receptor
+                </th>
+                <th>
+                    Cantidad de Puntos
+                </th>
+                <th>
+                    Fecha - Hora
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_LOG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_DISPOSITIVO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TIPOMOV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_USER_RECEPTOR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CANT_PUNTOS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHAHORA)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+        </div>

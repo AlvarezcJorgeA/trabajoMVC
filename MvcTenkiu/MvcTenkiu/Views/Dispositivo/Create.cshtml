@@ -17,7 +17,7 @@
             Modelo del Dispositivo
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.DP_MODELO, new { @required=true})
+            @Html.TextBoxFor(model => model.DP_MODELO, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.DP_MODELO)
         </div>
 
@@ -25,7 +25,7 @@
             Numero de Serie
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.DP_SERIE, new { @required = true })
+            @Html.TextBoxFor(model => model.DP_SERIE, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.DP_SERIE)
         </div>
                 

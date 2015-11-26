@@ -1,0 +1,64 @@
+﻿@model MvcTenkiu.Models.LOG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>LOG</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_LOG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_LOG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_DISPOSITIVO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_DISPOSITIVO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_USER)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_USER)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TIPOMOV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TIPOMOV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_USER_RECEPTOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_USER_RECEPTOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CANT_PUNTOS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CANT_PUNTOS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FECHAHORA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FECHAHORA)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
