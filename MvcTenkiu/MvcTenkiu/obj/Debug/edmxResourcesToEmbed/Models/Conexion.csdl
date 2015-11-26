@@ -197,6 +197,8 @@
     <Property Name="ID_USER_RECEPTOR" Type="Int32" />
     <Property Name="CANT_PUNTOS" Type="Int32" />
     <Property Name="FECHAHORA" Type="DateTime" Precision="3" />
+    <Property Name="ID_VEHICULO" Type="Int32" />
+    <Property Name="ID_CLAN" Type="Int32" />
   </EntityType>
   <EntityType Name="UserRoles">
     <Key>

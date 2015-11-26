@@ -47,9 +47,11 @@ advertencia 6002: La tabla o vista 'RedSocial.dbo.LOG' no tiene definida ninguna
           <Property Name="ID_LOG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_DISPOSITIVO" Type="int" />
           <Property Name="ID_USER" Type="int" />
+          <Property Name="ID_VEHICULO" Type="int" />
+          <Property Name="ID_CLAN" Type="int" />
           <Property Name="TIPOMOV" Type="varchar" MaxLength="50" />
-          <Property Name="ID_USER_RECEPTOR" Type="int" />
           <Property Name="CANT_PUNTOS" Type="int" />
+          <Property Name="ID_USER_RECEPTOR" Type="int" />
           <Property Name="FECHAHORA" Type="datetime" />
         </EntityType>
         <EntityType Name="MENU">
@@ -186,9 +188,11 @@ advertencia 6002: La tabla o vista 'RedSocial.dbo.UserRoles' no tiene definida n
 [LOG].[ID_LOG] AS [ID_LOG], 
 [LOG].[ID_DISPOSITIVO] AS [ID_DISPOSITIVO], 
 [LOG].[ID_USER] AS [ID_USER], 
+[LOG].[ID_VEHICULO] AS [ID_VEHICULO], 
+[LOG].[ID_CLAN] AS [ID_CLAN], 
 [LOG].[TIPOMOV] AS [TIPOMOV], 
-[LOG].[ID_USER_RECEPTOR] AS [ID_USER_RECEPTOR], 
 [LOG].[CANT_PUNTOS] AS [CANT_PUNTOS], 
+[LOG].[ID_USER_RECEPTOR] AS [ID_USER_RECEPTOR], 
 [LOG].[FECHAHORA] AS [FECHAHORA]
 FROM [dbo].[LOG] AS [LOG]</DefiningQuery>
           </EntitySet>
@@ -420,6 +424,8 @@ FROM [dbo].[UserRoles] AS [UserRoles]</DefiningQuery>
           <Property Name="ID_USER_RECEPTOR" Type="Int32" />
           <Property Name="CANT_PUNTOS" Type="Int32" />
           <Property Name="FECHAHORA" Type="DateTime" Precision="3" />
+          <Property Name="ID_VEHICULO" Type="Int32" />
+          <Property Name="ID_CLAN" Type="Int32" />
         </EntityType>
         <EntityType Name="UserRoles">
           <Key>
@@ -529,6 +535,8 @@ FROM [dbo].[UserRoles] AS [UserRoles]</DefiningQuery>
           <EntitySetMapping Name="LOG">
             <EntityTypeMapping TypeName="RedSocialModel.LOG">
               <MappingFragment StoreEntitySet="LOG">
+                <ScalarProperty Name="ID_CLAN" ColumnName="ID_CLAN" />
+                <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
                 <ScalarProperty Name="FECHAHORA" ColumnName="FECHAHORA" />
                 <ScalarProperty Name="CANT_PUNTOS" ColumnName="CANT_PUNTOS" />
                 <ScalarProperty Name="ID_USER_RECEPTOR" ColumnName="ID_USER_RECEPTOR" />

@@ -96,6 +96,8 @@
     <EntitySetMapping Name="LOG">
       <EntityTypeMapping TypeName="RedSocialModel.LOG">
         <MappingFragment StoreEntitySet="LOG">
+          <ScalarProperty Name="ID_CLAN" ColumnName="ID_CLAN" />
+          <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
           <ScalarProperty Name="FECHAHORA" ColumnName="FECHAHORA" />
           <ScalarProperty Name="CANT_PUNTOS" ColumnName="CANT_PUNTOS" />
           <ScalarProperty Name="ID_USER_RECEPTOR" ColumnName="ID_USER_RECEPTOR" />

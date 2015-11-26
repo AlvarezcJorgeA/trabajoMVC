@@ -21,5 +21,7 @@ namespace MvcTenkiu.Models
         public Nullable<int> ID_USER_RECEPTOR { get; set; }
         public Nullable<int> CANT_PUNTOS { get; set; }
         public Nullable<System.DateTime> FECHAHORA { get; set; }
+        public Nullable<int> ID_VEHICULO { get; set; }
+        public Nullable<int> ID_CLAN { get; set; }
     }
 }

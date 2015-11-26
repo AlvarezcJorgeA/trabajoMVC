@@ -13,24 +13,17 @@
     <fieldset>
         <legend>VEHICULO</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_ID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_ID)
-            @Html.ValidationMessageFor(model => model.VE_ID)
-        </div>
+        @Html.HiddenFor(model => model.VE_ID)
+        @Html.HiddenFor(model => model.US_ID)
+        @Html.HiddenFor(model => model.VE_PATENTE)
+        @Html.HiddenFor(model => model.VE_MARCA)
+        @Html.HiddenFor(model => model.VE_MODELO)
+        @Html.HiddenFor(model => model.VE_ANIO)
+        @Html.HiddenFor(model => model.VE_COLOR)
+        @Html.HiddenFor(model => model.VE_ESTADO)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.US_ID, "USUARIO")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("US_ID", String.Empty)
-            @Html.ValidationMessageFor(model => model.US_ID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CL_ID, "CLAN")
+           Clan
         </div>
         <div class="editor-field">
             @Html.DropDownList("CL_ID", String.Empty)
@@ -38,63 +31,17 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DP_ID, "DISPOSITIVO")
+           Dispositivo
         </div>
         <div class="editor-field">
             @Html.DropDownList("DP_ID", String.Empty)
             @Html.ValidationMessageFor(model => model.DP_ID)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_PATENTE)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_PATENTE)
-            @Html.ValidationMessageFor(model => model.VE_PATENTE)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_MARCA)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_MARCA)
-            @Html.ValidationMessageFor(model => model.VE_MARCA)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_MODELO)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_MODELO)
-            @Html.ValidationMessageFor(model => model.VE_MODELO)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_ANIO)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_ANIO)
-            @Html.ValidationMessageFor(model => model.VE_ANIO)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_COLOR)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_COLOR)
-            @Html.ValidationMessageFor(model => model.VE_COLOR)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.VE_ESTADO)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.VE_ESTADO)
-            @Html.ValidationMessageFor(model => model.VE_ESTADO)
-        </div>
-
+                      
+       <br/>
+       
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Guardar Cambios" />
         </p>
     </fieldset>
 }

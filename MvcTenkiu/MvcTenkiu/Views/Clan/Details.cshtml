@@ -45,11 +45,11 @@
     </div>
 
     <div class="display-label">
-         Privado ?
+         Grupo Privado
     </div>
     <div class="display-field">
-        @Html.TextBoxFor(model => model.CL_PRIV)
-    </div>
+        @Html.CheckBoxFor(model => model.CL_PRIV.Value, new { @disabled=true})
+    </div>  
 </fieldset>
     </div>
 <br/>

@@ -4,77 +4,77 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Desvincular Vehiculo</h2>
 
-<h3>Estas seguro de eliminarlo?</h3>
+<h3>Estas seguro de desvincularlo?</h3>
 <fieldset>
     <legend>VEHICULO</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_ID)
+         Codigo
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_ID)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
+         Usuario Asignado
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.USUARIO.US_NOMBRE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLAN.CL_NOMBRE)
+        Clan Asignado
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CLAN.CL_NOMBRE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
+      Dispositivo
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DISPOSITIVO.DP_MODELO)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_PATENTE)
+        Patente
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_PATENTE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_MARCA)
+         Marca
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_MARCA)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_MODELO)
+    Modelo
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_MODELO)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_ANIO)
+    Año
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_ANIO)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_COLOR)
+Color
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.VE_COLOR)
+        @Html.TextBoxFor(model => model.VE_COLOR, new { @type = "color", @readonly = true, @style = "background:0; width:35px; height:35px" })
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.VE_ESTADO)
+        Estado
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.VE_ESTADO)
@@ -82,8 +82,9 @@
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
+    <br/>
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Desvincular" /> |
         @Html.ActionLink("Volver", "Index")
     </p>
 }

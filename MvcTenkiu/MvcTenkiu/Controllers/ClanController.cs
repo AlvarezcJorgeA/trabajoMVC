@@ -52,7 +52,12 @@ namespace MvcTenkiu.Controllers
             if (ModelState.IsValid)
             {
                 clan.CL_FCREACION = DateTime.Now;
+                if (clan.CL_PRIV == null) {
+                    clan.CL_PRIV = false;
+                }
+                
                 db.CLAN.Add(clan);
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -4,83 +4,88 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Tus Vehiculos</h2>
+<h2>Tus Vehiculos Vinculados</h2>
 
 <p>
     @Html.ActionLink("Vincula un Nuevo Vehiculo", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.USUARIO.US_NOMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CLAN.CL_NOMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DISPOSITIVO.DP_MODELO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_PATENTE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_MARCA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_MODELO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_ANIO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_COLOR)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VE_ESTADO)
-        </th>
-        <th></th>
-    </tr>
+<div class="lista">
+    <table class="Tablalista">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.USUARIO.US_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLAN.CL_NOMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DISPOSITIVO.DP_MODELO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_PATENTE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_MARCA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_MODELO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_ANIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_COLOR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VE_ESTADO)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Desvincular", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+        <tr class="enc_lista">
+            <th>
+                Cod
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Clan
+            </th>
+            <th>
+                Dispositivo
+            </th>
+            <th>
+                Patente
+            </th>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Año
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.USUARIO.US_NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLAN.CL_NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DISPOSITIVO.DP_MODELO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_PATENTE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_MARCA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_MODELO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_ANIO)
+                </td>
+                <td>
+                    
+                    @Html.TextBoxFor(modelItem => item.VE_COLOR, new {@type="color", @readonly=true, @style="background:0; width:35px; height:35px"})
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VE_ESTADO)
+                </td>
+                <td class ="link_lista">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.VE_ID }) |
+                    @Html.ActionLink("Desvincular", "Delete", new { id = item.VE_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

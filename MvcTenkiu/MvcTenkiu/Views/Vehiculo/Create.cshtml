@@ -22,7 +22,7 @@
         </div>
 
         <div class="editor-label">
-            Deseas añadirlo al Clan :
+            Deseas añadirlo a algun Clan (si no, dejalo en blanco)
         </div>
         <div class="editor-field">
             @Html.DropDownList("CL_ID", String.Empty)
@@ -38,10 +38,10 @@
         </div>
 
         <div class="editor-label">
-            Patente
+            Patente del vehiculo
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VE_PATENTE)
+            @Html.TextBoxFor(model => model.VE_PATENTE, new { @required = true, @maxlength = "6" } )
             @Html.ValidationMessageFor(model => model.VE_PATENTE)
         </div>
 
@@ -49,7 +49,7 @@
             Marca
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VE_MARCA)
+            @Html.TextBoxFor(model => model.VE_MARCA, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.VE_MARCA)
         </div>
 
@@ -57,7 +57,7 @@
             Modelo
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VE_MODELO)
+            @Html.TextBoxFor(model => model.VE_MODELO, new { @required = true, @maxlength = "20" })
             @Html.ValidationMessageFor(model => model.VE_MODELO)
         </div>
 
@@ -65,7 +65,7 @@
             Año
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VE_ANIO)
+            @Html.TextBoxFor(model => model.VE_ANIO, new { @required = true, @max = 2015, @min = 1940, @size="2", @type = "number" })
             @Html.ValidationMessageFor(model => model.VE_ANIO)
         </div>
 
@@ -73,7 +73,7 @@
             Color
           </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VE_COLOR)
+            @Html.TextBoxFor(model => model.VE_COLOR, new { @type="color" , @value="000000"})
             @Html.ValidationMessageFor(model => model.VE_COLOR)
         </div>
 
